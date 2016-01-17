@@ -10,11 +10,11 @@ import (
 
 var (
 	API_EMAIL_URL           = "http://sendcloud.sohu.com/webapi/mail.send_template.json"
-	API_EMAIL_USER          = "mpush_admin"
-	API_EMAIL_KEY           = "N1T2xL2rDxExc2Tt"
-	API_EMAIL_FROM          = "support@mrocker.com"
-	API_EMAIL_FROMNAME      = "MPush"
-	API_EMAIL_SUBJECT       = "mpush sdk update"
+	API_EMAIL_USER          = "*"
+	API_EMAIL_KEY           = "*"
+	API_EMAIL_FROM          = "*"
+	API_EMAIL_FROMNAME      = "*"
+	API_EMAIL_SUBJECT       = "* sdk update"
 	API_EMAIL_TEMPLATE_NAME = "sdkUpdate"
 )
 
@@ -71,11 +71,11 @@ func main() {
 		utee.Chk(e)
 		param.Set("substitution_vars", string(msg))
 		log.Println("param", param)
-				a, err := utee.HttpPost(API_EMAIL_URL, param)
-				log.Print("a...", string(a))
-				if err != nil {
-					log.Println("send mail err", err)
-				}
+		a, err := utee.HttpPost(API_EMAIL_URL, param)
+		log.Print("a...", string(a))
+		if err != nil {
+			log.Println("send mail err", err)
+		}
 		to = nil
 		link = nil
 		mail = nil
