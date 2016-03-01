@@ -1,7 +1,7 @@
 package main
+
 import (
 	"log"
-	"time"
 )
 
 func main() {
@@ -9,20 +9,21 @@ func main() {
 		k int
 		e chan int
 	}
-	c := make(chan m)
+	m1 := make(chan m)
+	c := m{
+		1,
+		make(chan int),
+	}
+
 	go func() {
 		select {
-		case a := <-c.k:
-			log.Println("a",a)
-			m.e<-1
+		case a := <-m1:
+			log.Println("m1", a.k)
+			a.e <- 100
 		}
 	}()
 
+	m1 <- c
+	log.Println("c", <-c.e)
 
-	gg := m{}
-	gg.k=2
-	c<-gg
-	e:= <-gg.e
-	log.Println("e",e)
-	time.Sleep()
 }
