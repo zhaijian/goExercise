@@ -65,9 +65,8 @@ func (a *Atom) print() {
 		return
 	}
 	for curr := a; curr != nil; curr = curr.next {
-		fmt.Print("(item ", curr.item.item, " weight ", curr.weight, ") ")
+		fmt.Println("(item ", curr.item.item, " weight ", curr.weight, ") ")
 	}
-	fmt.Println()
 }
 
 func (a *Atom) pop() *Atom {

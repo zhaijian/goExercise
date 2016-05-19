@@ -64,24 +64,5 @@ type Node struct {
 
 func (n *Node) print(atom *Atom) {
 
-	for curr := atom; curr != nil; curr = curr.next {
-		curr.item.next
-	}
 
-	nextAtom := atom.next
-	children := atom.item.next
-	for i := 0; i < len(children); i++ {
-		child := children[i]
-		weight := atom.item.weight[i]
-		a := &Atom{
-			item:   child,
-			weight: atom.weight + weight,
-		}
-		if nextAtom == nil {
-			nextAtom = a
-			continue
-		}
-		nextAtom = nextAtom.sortInsert(a)
-	}
-	return nextAtom
 }
