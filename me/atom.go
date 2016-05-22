@@ -56,6 +56,7 @@ func (c *ClumpTree) initChild(a *Atom) {
 }
 
 func (c *ClumpTree) generateTree() {
+	//循环生成子树
 	for i := 0; i < len(c.children); i++ {
 		c.generateByPos(i)
 	}
@@ -63,12 +64,14 @@ func (c *ClumpTree) generateTree() {
 
 func (c *ClumpTree) generateByPos(pos int) {
 	currClump := c.children[pos]
+	//当前节点依次和兄弟节点做互斥，如果互斥，则把兄弟节点作为他的子树
 	for i := pos + 1; i < len(c.children); i++ {
 		if !currClump.item.isExist(c.children[i].item) {
 			child := initClumpTree(c.children[i].item)
 			currClump.children = append(currClump.children, child)
 		}
 	}
+	//循环递归生成它的子树
 	for i := 0; i < len(currClump.children); i++ {
 		currClump.generateByPos(i)
 	}
