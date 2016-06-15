@@ -1,0 +1,19 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "9gw/n5AtMrvf1y9VSFu7zi1eatk=",
+			"path": "github.com/coocood/freecache",
+			"revision": "1aa53c26cb85c33eef6d832305447982e95f844c",
+			"revisionTime": "2016-03-30T15:18:51Z"
+		},
+		{
+			"checksumSHA1": "bbilAC3Am0MP1lPfSKblFsIvg4Q=",
+			"path": "github.com/spaolacci/murmur3",
+			"revision": "0d12bf811670bf6a1a63828dfbd003eded177fce",
+			"revisionTime": "2015-08-29T17:28:44Z"
+		}
+	],
+	"rootPath": "goExercise/arr"
+}
