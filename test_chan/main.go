@@ -25,5 +25,5 @@ func main() {
 
 	m1 <- c
 	log.Println("c", <-c.e)
-
+    log.Print(123)
 }
