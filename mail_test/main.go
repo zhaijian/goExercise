@@ -19,7 +19,7 @@ var (
 )
 
 func main() {
-	vendors := []string{"782271923@qq.com", "piaoxyx@gmail.com", "piaoxyx@126.com", "mrotest@yeah.net"}
+	vendors := []string{"***@qq.com", "***@gmail.com", "****@126.com", "***@yeah.net"}
 	type S struct {
 		Link     []string `json:"{{.link}}"`
 		Mail     []string `json:"{{.mail}}"`
